@@ -1,17 +1,16 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import CartProvider from "./components/Provider";
-import ShoppingCartModal from "./components/ShoppingCartModal";
-import ClientSessionProvider from "./components/ClientSessionProvider";
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from './components/Navbar';
+import CartProvider from './components/Provider';
+import ShoppingCartModal from './components/ShoppingCartModal';
+import ClientSessionProvider from './components/ClientSessionProvider';
+import { Toaster } from 'react-hot-toast';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: "Qadir Store",
-  description:
-    "Qadir Store is your one-stop destination for trendy and stylish products for men, women, and teens. Our carefully curated collection features the latest in fashion, ensuring you stay ahead of the trends. Whether you're looking for chic outfits for women, dapper attire for men, or cool and casual styles for teens, Qadir Store has something for everyone. Discover a wide range of clothing, accessories, and more, all designed to cater to your fashion needs. Step into Qadir Store and elevate your style game today!",
+export const metadata = {
+  title: 'Qadir Store',
+  description: 'Qadir Store is your one-stop destination for trendy and stylish products for men, women, and teens. Our carefully curated collection features the latest in fashion, ensuring you stay ahead of the trends. Whether you\'re looking for chic outfits for women, dapper attire for men, or cool and casual styles for teens, Qadir Store has something for everyone. Discover a wide range of clothing, accessories, and more, all designed to cater to your fashion needs. Step into Qadir Store and elevate your style game today!',
 };
 
 export default function RootLayout({
@@ -26,6 +25,7 @@ export default function RootLayout({
           <CartProvider>
             <Navbar />
             <ShoppingCartModal />
+            <Toaster /> {/* Add Toaster component here */}
             {children}
           </CartProvider>
         </ClientSessionProvider>
@@ -33,6 +33,43 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// import type { Metadata } from "next";
+// import { Inter } from "next/font/google";
+// import "./globals.css";
+// import Navbar from "./components/Navbar";
+// import CartProvider from "./components/Provider";
+// import ShoppingCartModal from "./components/ShoppingCartModal";
+// import ClientSessionProvider from "./components/ClientSessionProvider";
+
+// const inter = Inter({ subsets: ["latin"] });
+
+// export const metadata: Metadata = {
+//   title: "Qadir Store",
+//   description:
+//     "Qadir Store is your one-stop destination for trendy and stylish products for men, women, and teens. Our carefully curated collection features the latest in fashion, ensuring you stay ahead of the trends. Whether you're looking for chic outfits for women, dapper attire for men, or cool and casual styles for teens, Qadir Store has something for everyone. Discover a wide range of clothing, accessories, and more, all designed to cater to your fashion needs. Step into Qadir Store and elevate your style game today!",
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="en">
+//       <body className={inter.className}>
+//         <ClientSessionProvider>
+//           <CartProvider>
+//             <Navbar />
+//             <ShoppingCartModal />
+//             {children}
+//           </CartProvider>
+//         </ClientSessionProvider>
+//       </body>
+//     </html>
+//   );
+// }
 
 // import type { Metadata } from "next";
 // import { Inter, Noto_Sans_Bassa_Vah } from "next/font/google";

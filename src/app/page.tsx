@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./components/Hero";
 import Newest from "./components/Newest";
 
@@ -12,3 +11,4 @@ export default function Home() {
     </div>
   );
 }
+
